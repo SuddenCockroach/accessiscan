@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccessiScan - Make Your Website Accessible</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+  <div id="app" class="container">
+    <header>
+      <h1>AccessiScan</h1>
+      <p>Helping everyone enjoy your website</p>
+      <button id="theme-toggle" aria-label="Toggle light/dark theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+    <main>
+      <section class="about">
+        <h2>Welcome to AccessiScan</h2>
+        <p>
+          AccessiScan makes your website welcoming for everyone by checking it against <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">WCAG 2.1</a> standards. It’s built for small businesses and developers to spot and fix accessibility issues easily.
+        </p>
+        <p>
+          Most websites (over 96%) have accessibility gaps, which can exclude people or lead to legal issues. Our quick scans (10-30 seconds) and simple tips help you create an inclusive site that works for all, including those with visual or hearing needs.
+        </p>
+        <p>
+          Enjoy a friendly interface with fun features like scan streaks and confetti for perfect scores. Start scanning now to make your website a better place for everyone!
+        </p>
+      </section>
+      <section class="input-section">
+        <h2>Check Your Website</h2>
+        <p class="url-info">
+          Type a website URL starting with <strong>https://</strong> or <strong>http://</strong> (like https://example.com). Make sure it’s a public site, as we don’t store any private data.
+        </p>
+        <div class="input-group">
+          <input
+            type="url"
+            id="url-input"
+            placeholder="https://example.com"
+            aria-label="Website URL to check for accessibility"
+          />
+          <button id="scan-btn">Check Accessibility</button>
+        </div>
+        <div class="progress-container" role="status" aria-hidden="true">
+          <div id="progress-bar" style="width: 0%"></div>
+        </div>
+        <p id="scan-streak" aria-live="polite">Scan Streak: <span id="streak-count">0</span></p>
+        <div id="results" role="region" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
